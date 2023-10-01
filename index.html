@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="./style.css">
+   <title>Horizxon Studios</title>
+   <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/831823676398764052/1000330782503620670/Horizxon.png">
+   <meta content="A Lavalink Status webpage for Horizxon Studios."property="og:description" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content= "https://cdn.discordapp.com/attachments/831823676398764052/1000330782503620670/Horizxon.png"  />
+</head>
+<body >
+<section>
+  <!--<div id= "page"> -->
+<p id= "Info" >Fetching Stats</p>
+  <script src= "./scripts/script.js" defer></script>
+  
+
+</section>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  
+  var socket = io();
+var body = document.getElementById("Info")
+var button = document.getElementById("butt1")
+ 
+socket.on("test",function(data){
+ body.innerHTML = `${data.data}<br>
+ ${data.message} `;
+})
+
+ 
+</script>
