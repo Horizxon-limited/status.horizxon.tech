@@ -24,7 +24,7 @@ io.on("connection",(socket)=>{
   console.log(socket.id +"• User Connected "+ new Date())
 watching +=1;
 
-  io.emit("test",{data:`<h3>• Updates every : 30 seconds • ${watching} visitors</h3><h3 class= "rainbow">Horizxon Studios</h3>`, message: startStat? startStat:"Fetching stats please refresh or return shortly"})
+  io.emit("test",{data:`<h3>• Updates every : 30 seconds • ${watching} visitors</h3><h3 class= "rainbow">Horizxon Limited</h3>`, message: startStat? startStat:"Fetching stats please refresh or return shortly"})
   socket.on("disconnect",()=>{
 console.log("User Disconnected "+socket.id)
     watching -=1;
@@ -50,7 +50,7 @@ client.manager = new Manager({
     if (guild) guild.shard.send(payload);
   }
 })
-client.login("MTAzOTE1MTU2NzE4NzczODYyNA.GlSDEc.GOvmYE0L1C84zBVj5fN7PslF-K-VMA_AhMwOY4")
+client.login("BOT-TOKEN")
 
 client.on("ready",(client)=>{
   console.log(client.user.tag+" ready")
@@ -62,7 +62,7 @@ setInterval(()=>{
 let bun = getStat(client);
   startStat = bun?.join("\n");
  io.emit("test",{
-   data: `<h3>• Updates every : 30 seconds • ${watching} visitors</h3><h3 class= "rainbow"> Horizxon Studios</h3>` ,
+   data: `<h3>• Updates every : 30 seconds • ${watching} visitors</h3><h3 class= "rainbow"> Horizxon Limited</h3>` ,
  ///  message: `${names[Math.floor(Math.random()*names.length)]} : [${says[Math.floor(Math.random()*says.length)]}]`
    message: `
 ${bun.join(" \n")}
